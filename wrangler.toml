@@ -1,0 +1,57 @@
+name = "intellibus-academy-hub"
+main = "worker/index.ts"
+compatibility_date = "2026-09-09"
+compatibility_flags = ["nodejs_compat"]
+
+[assets]
+directory = "./dist"
+binding = "ASSETS"
+not_found_handling = "single-page-application"
+
+[[d1_databases]]
+binding = "ACADEMY_DB"
+database_name = "intellibus-academy-hub-local"
+database_id = "replace-with-local-d1-id"
+migrations_dir = "migrations"
+
+[[r2_buckets]]
+binding = "ACADEMY_MEDIA"
+bucket_name = "intellibus-academy-media-local"
+
+[vars]
+APP_ENV = "local"
+PUBLIC_MEDIA_BASE_URL = "http://localhost:8787/media"
+
+[env.preview]
+name = "intellibus-academy-hub-preview"
+
+[[env.preview.d1_databases]]
+binding = "ACADEMY_DB"
+database_name = "intellibus-academy-hub-preview"
+database_id = "replace-with-preview-d1-id"
+migrations_dir = "migrations"
+
+[[env.preview.r2_buckets]]
+binding = "ACADEMY_MEDIA"
+bucket_name = "intellibus-academy-media-preview"
+
+[env.preview.vars]
+APP_ENV = "preview"
+PUBLIC_MEDIA_BASE_URL = "https://preview-media.example.com"
+
+[env.production]
+name = "intellibus-academy-hub"
+
+[[env.production.d1_databases]]
+binding = "ACADEMY_DB"
+database_name = "intellibus-academy-hub-production"
+database_id = "replace-with-production-d1-id"
+migrations_dir = "migrations"
+
+[[env.production.r2_buckets]]
+binding = "ACADEMY_MEDIA"
+bucket_name = "intellibus-academy-media-production"
+
+[env.production.vars]
+APP_ENV = "production"
+PUBLIC_MEDIA_BASE_URL = "https://media.example.com"
