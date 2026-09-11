@@ -111,9 +111,9 @@ export default function EventsPage() {
         </div>
       </section>
 
-      <section className="bg-[linear-gradient(180deg,#ffffff_0%,#f6fbff_100%)]">
-        <div className="grid min-w-0 gap-5 py-5 md:grid-cols-[41fr_59fr] lg:h-[12.25rem] lg:gap-0 lg:py-0">
-          <div className="min-w-0 px-[var(--space-page-x)] lg:px-20 lg:py-4 xl:px-[5.5rem]">
+      <section className="bg-[linear-gradient(180deg,#ffffff_0%,#f6fbff_100%)] py-8 lg:h-[16rem] lg:py-8">
+        <div className="grid h-full min-w-0 gap-6 md:grid-cols-[41fr_59fr] md:items-center lg:gap-0">
+          <div className="flex min-w-0 items-center px-[var(--space-page-x)] lg:h-full lg:px-20 xl:px-[5.5rem]">
             <div className="min-w-0 max-w-2xl">
               <p className="text-sm font-bold uppercase tracking-[0.18em] text-primary">
                 Event Recap
@@ -136,7 +136,7 @@ export default function EventsPage() {
               </Link>
             </div>
           </div>
-          <div className="min-w-0 overflow-hidden px-[var(--space-page-x)] md:h-full lg:px-0 lg:py-3 lg:pr-[var(--space-page-x)] max-md:h-48">
+          <div className="min-w-0 overflow-hidden px-[var(--space-page-x)] md:h-56 lg:h-full lg:px-0 lg:pr-[var(--space-page-x)]">
             <img
               alt="Academy certificate presentation during the recognition event."
               className="h-full w-full object-cover object-[center_45%]"
@@ -146,9 +146,9 @@ export default function EventsPage() {
         </div>
       </section>
 
-      <section className="academy-container space-y-2 pb-1">
+      <section className="academy-container space-y-8 pb-10 pt-8">
         <section>
-          <div className="mb-2">
+          <div className="mb-4">
             <h2 className="text-2xl font-bold leading-[var(--line-height-heading)] text-foreground md:text-3xl">
               Upcoming Events
             </h2>
@@ -158,12 +158,12 @@ export default function EventsPage() {
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
             {upcomingEvents.map((event) => (
               <article
-                className="flex min-h-[7rem] min-w-0 items-start gap-3 rounded-[var(--radius-component)] border border-border bg-card p-3 shadow-soft xl:h-[7rem]"
+                className="flex min-h-[9.5rem] min-w-0 items-start gap-4 rounded-[var(--radius-component)] border border-border bg-card p-4 shadow-soft"
                 key={`${event.month}-${event.day}-${event.title}`}
               >
                 <div
                   aria-label={`${event.month} ${event.day}, ${event.weekday}`}
-                  className="flex h-[5.5rem] w-[4.65rem] shrink-0 flex-col items-center justify-center rounded-sm bg-[linear-gradient(180deg,#fbf8f1_0%,#f4efe5_100%)] text-center"
+                  className="flex h-24 w-20 shrink-0 flex-col items-center justify-center rounded-sm bg-[linear-gradient(180deg,#fbf8f1_0%,#f4efe5_100%)] text-center"
                 >
                   <span className="text-xs font-bold uppercase text-foreground">
                     {event.month}
@@ -179,7 +179,7 @@ export default function EventsPage() {
                   <h3 className="text-base font-bold leading-tight text-foreground">
                     {event.title}
                   </h3>
-                  <p className="mt-1 flex items-center gap-1.5 text-sm leading-tight text-primary">
+                  <p className="mt-2 flex items-center gap-1.5 text-sm leading-tight text-primary">
                     <Clock aria-hidden="true" className="shrink-0" size={15} />
                     <span className="min-w-0">{event.time}</span>
                   </p>
@@ -187,7 +187,7 @@ export default function EventsPage() {
                     <MapPin aria-hidden="true" className="shrink-0" size={15} />
                     <span>{event.location}</span>
                   </p>
-                  <p className="mt-1 text-sm leading-snug text-foreground/86">
+                  <p className="mt-2 text-sm leading-snug text-foreground/86">
                     {event.summary}
                   </p>
                 </div>
@@ -201,24 +201,23 @@ export default function EventsPage() {
           </div>
         </section>
 
-        <section>
+        <section className="pt-1">
           <h2 className="text-2xl font-bold leading-[var(--line-height-heading)] text-foreground md:text-3xl">
             Past Events
           </h2>
           <div className="mt-1 h-1 w-16 bg-accent" aria-hidden="true" />
-          <div className="mt-2 grid gap-3 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-[repeat(5,minmax(0,1fr))_12rem]">
+          <div className="mt-4 grid gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-[repeat(5,minmax(0,1fr))_12rem]">
             {pastEventImages.map((image) => (
               <img
                 alt={image.alt}
-                className="h-[4.25rem] w-full rounded-[var(--radius-component)] object-cover"
+                className="h-28 w-full rounded-[var(--radius-component)] object-cover"
                 key={image.src}
-                loading="lazy"
                 src={image.src}
               />
             ))}
 
             <Link
-              className="flex h-[4.25rem] items-center justify-center gap-3 rounded-[var(--radius-component)] border border-border bg-card px-4 text-sm font-bold text-primary shadow-soft transition hover:border-primary hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+              className="flex min-h-28 items-center justify-center gap-3 rounded-[var(--radius-component)] border border-border bg-card px-4 text-sm font-bold text-primary shadow-soft transition hover:border-primary hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
               to="/community/photos"
             >
               View Photo Album
