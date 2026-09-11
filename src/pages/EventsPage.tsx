@@ -84,12 +84,9 @@ const pastEventImages: PastEventImage[] = [
 export default function EventsPage() {
   return (
     <div className="overflow-x-hidden bg-[linear-gradient(180deg,#ffffff_0%,#f4f9ff_62%,#eff8ff_100%)]">
-      <section className="grid min-w-0 overflow-hidden bg-[var(--academy-deep-navy)] text-white lg:h-[clamp(300px,33vw,330px)] lg:grid-cols-[41fr_59fr]">
-        <div className="flex min-w-0 items-center px-[var(--space-page-x)] py-8 lg:h-full lg:px-20 lg:py-0 xl:px-[5.5rem]">
+      <section className="grid min-w-0 overflow-hidden bg-[var(--academy-deep-navy)] text-white lg:h-[clamp(290px,31vw,310px)] lg:grid-cols-[41fr_59fr]">
+        <div className="flex min-w-0 items-center px-[var(--space-page-x)] py-6 lg:h-full lg:px-20 lg:py-0 xl:px-[5.5rem]">
           <div className="min-w-0 max-w-2xl">
-            <p className="mb-4 text-sm font-bold uppercase tracking-[0.24em] text-[var(--academy-gold-soft)] md:text-base">
-              Intellibus Academy
-            </p>
             <h1 className="text-5xl font-bold leading-[var(--line-height-tight)] md:text-7xl lg:text-[5.25rem]">
               Events
             </h1>
@@ -102,7 +99,7 @@ export default function EventsPage() {
             </p>
           </div>
         </div>
-        <div className="min-w-0 overflow-hidden lg:h-full max-lg:h-64">
+        <div className="min-w-0 overflow-hidden lg:h-full max-lg:h-48">
           <img
             alt="Academy community members gathered during an event."
             className="h-full w-full object-cover object-[center_45%]"
