@@ -1,15 +1,5 @@
-import {
-  ArrowRight,
-  CalendarDays,
-  ChevronRight,
-  Clock,
-  ImageIcon,
-  List,
-  MapPin
-} from "lucide-react";
+import { ArrowRight, ChevronRight, Clock, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
-
-import { Button } from "../components/ui/button";
 
 interface EventCard {
   month: string;
@@ -93,122 +83,111 @@ const pastEventImages: PastEventImage[] = [
 
 export default function EventsPage() {
   return (
-    <div className="bg-[linear-gradient(180deg,#ffffff_0%,#f4f9ff_54%,#eff8ff_100%)] pb-8">
-      <section className="grid overflow-hidden bg-[var(--academy-deep-navy)] text-white lg:grid-cols-[minmax(27rem,41vw)_1fr]">
-        <div className="flex min-h-[20rem] items-center px-[var(--space-page-x)] py-10 md:min-h-[21rem]">
-          <div className="max-w-2xl">
+    <div className="overflow-x-hidden bg-[linear-gradient(180deg,#ffffff_0%,#f4f9ff_62%,#eff8ff_100%)]">
+      <section className="grid min-w-0 overflow-hidden bg-[var(--academy-deep-navy)] text-white lg:h-[clamp(300px,33vw,330px)] lg:grid-cols-[41fr_59fr]">
+        <div className="flex min-w-0 items-center px-[var(--space-page-x)] py-8 lg:h-full lg:px-20 lg:py-0 xl:px-[5.5rem]">
+          <div className="min-w-0 max-w-2xl">
             <p className="mb-4 text-sm font-bold uppercase tracking-[0.24em] text-[var(--academy-gold-soft)] md:text-base">
               Intellibus Academy
             </p>
-            <h1 className="text-5xl font-bold leading-[var(--line-height-tight)] md:text-7xl">
+            <h1 className="text-5xl font-bold leading-[var(--line-height-tight)] md:text-7xl lg:text-[5.25rem]">
               Events
             </h1>
-            <p className="mt-3 text-2xl leading-[var(--line-height-heading)] text-white md:text-3xl">
+            <p className="mt-2 text-2xl leading-[var(--line-height-heading)] text-white md:text-3xl">
               Experiences worth remembering.
             </p>
-            <div className="mt-6 h-1 w-16 bg-accent" aria-hidden="true" />
-            <p className="mt-5 max-w-xl text-lg leading-[var(--line-height-body)] text-white/84 md:text-xl">
+            <div className="mt-5 h-1 w-16 bg-accent" aria-hidden="true" />
+            <p className="mt-4 max-w-xl break-words text-lg leading-[var(--line-height-body)] text-white/84 md:text-xl">
               Celebrations, conversations and moments that bring our community together.
             </p>
           </div>
         </div>
-        <img
-          alt="Academy community members gathered during an event."
-          className="h-64 w-full object-cover lg:h-full lg:min-h-[20rem]"
-          src={heroImage}
-        />
-      </section>
-
-      <section className="bg-[linear-gradient(180deg,#ffffff_0%,#f6fbff_100%)]">
-        <div className="academy-container grid gap-8 py-5 md:grid-cols-[minmax(0,0.62fr)_minmax(0,1fr)] md:items-center">
-          <div className="max-w-2xl">
-            <p className="text-sm font-bold uppercase tracking-[0.18em] text-primary">
-              Event Recap
-            </p>
-            <h2 className="mt-2 text-4xl font-bold leading-[var(--line-height-heading)] text-foreground md:text-5xl">
-              Recognition Event 2026
-            </h2>
-            <p className="mt-2 text-lg leading-[var(--line-height-body)] text-foreground md:text-xl">
-              Celebrating growth, achievement and the journey ahead.
-            </p>
-            <p className="mt-2 max-w-xl text-base leading-[var(--line-height-body)] text-muted-foreground md:text-lg">
-              An inspiring evening with our Academy community, honoring milestones,
-              sharing stories and looking toward what's next.
-            </p>
-            <Link
-              className="mt-2 inline-flex min-h-8 items-center border-b border-primary text-base font-semibold text-primary transition hover:text-[var(--academy-blue-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-              to="/community/photos/intellibus-award-ceremony"
-            >
-              Explore the highlights
-            </Link>
-          </div>
+        <div className="min-w-0 overflow-hidden lg:h-full max-lg:h-64">
           <img
-            alt="Academy certificate presentation during the recognition event."
-            className="h-52 w-full object-cover"
-            src={recapImage}
+            alt="Academy community members gathered during an event."
+            className="h-full w-full object-cover object-[center_45%]"
+            src={heroImage}
           />
         </div>
       </section>
 
-      <section className="academy-container space-y-5">
-        <section>
-          <div className="mb-4 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-            <div>
-              <h2 className="text-2xl font-bold leading-[var(--line-height-heading)] text-foreground md:text-3xl">
-                Upcoming Events
+      <section className="bg-[linear-gradient(180deg,#ffffff_0%,#f6fbff_100%)]">
+        <div className="grid min-w-0 gap-5 py-5 md:grid-cols-[41fr_59fr] lg:h-[12.25rem] lg:gap-0 lg:py-0">
+          <div className="min-w-0 px-[var(--space-page-x)] lg:px-20 lg:py-4 xl:px-[5.5rem]">
+            <div className="min-w-0 max-w-2xl">
+              <p className="text-sm font-bold uppercase tracking-[0.18em] text-primary">
+                Event Recap
+              </p>
+              <h2 className="mt-1 text-3xl font-bold leading-[var(--line-height-heading)] text-foreground md:text-4xl lg:text-[2.45rem]">
+                Recognition Event 2026
               </h2>
-              <div className="mt-1 h-1 w-16 bg-accent" aria-hidden="true" />
-            </div>
-            <div className="inline-flex w-fit rounded-[var(--radius-component)] border border-primary bg-card p-1 text-sm font-semibold text-primary">
-              <Button
-                className="min-h-9 px-4"
-                size="sm"
-                type="button"
-                variant="primary"
+              <p className="mt-1 break-words text-base leading-snug text-foreground md:text-lg">
+                Celebrating growth, achievement and the journey ahead.
+              </p>
+              <p className="mt-2 max-w-xl break-words text-sm leading-snug text-muted-foreground md:text-base">
+                An inspiring evening with our Academy community, honoring milestones,
+                sharing stories and looking toward what's next.
+              </p>
+              <Link
+                className="mt-2 inline-flex min-h-7 items-center border-b border-primary text-base font-semibold text-primary transition hover:text-[var(--academy-blue-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                to="/community/photos/intellibus-award-ceremony"
               >
-                <CalendarDays aria-hidden="true" size={18} />
-                Calendar View
-              </Button>
-              <Button className="min-h-9 px-4" size="sm" type="button" variant="ghost">
-                <List aria-hidden="true" size={18} />
-                List View
-              </Button>
+                Explore the highlights
+              </Link>
             </div>
+          </div>
+          <div className="min-w-0 overflow-hidden px-[var(--space-page-x)] md:h-full lg:px-0 lg:py-3 lg:pr-[var(--space-page-x)] max-md:h-48">
+            <img
+              alt="Academy certificate presentation during the recognition event."
+              className="h-full w-full object-cover object-[center_45%]"
+              src={recapImage}
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="academy-container space-y-2 pb-1">
+        <section>
+          <div className="mb-2">
+            <h2 className="text-2xl font-bold leading-[var(--line-height-heading)] text-foreground md:text-3xl">
+              Upcoming Events
+            </h2>
+            <div className="mt-1 h-1 w-16 bg-accent" aria-hidden="true" />
           </div>
 
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
             {upcomingEvents.map((event) => (
               <article
-                className="flex min-h-36 items-start gap-4 rounded-[var(--radius-component)] border border-border bg-card p-4 shadow-soft"
+                className="flex min-h-[7rem] min-w-0 items-start gap-3 rounded-[var(--radius-component)] border border-border bg-card p-3 shadow-soft xl:h-[7rem]"
                 key={`${event.month}-${event.day}-${event.title}`}
               >
                 <div
                   aria-label={`${event.month} ${event.day}, ${event.weekday}`}
-                  className="flex h-28 w-20 shrink-0 flex-col items-center justify-center rounded-sm bg-[linear-gradient(180deg,#fbf8f1_0%,#f4efe5_100%)] text-center"
+                  className="flex h-[5.5rem] w-[4.65rem] shrink-0 flex-col items-center justify-center rounded-sm bg-[linear-gradient(180deg,#fbf8f1_0%,#f4efe5_100%)] text-center"
                 >
                   <span className="text-xs font-bold uppercase text-foreground">
                     {event.month}
                   </span>
-                  <span className="text-4xl font-bold leading-none text-accent">
+                  <span className="text-4xl font-bold leading-[0.88] text-accent">
                     {event.day}
                   </span>
                   <span className="text-xs font-bold uppercase text-foreground">
                     {event.weekday}
                   </span>
                 </div>
-                <div className="min-w-0">
-                  <h3 className="text-lg font-bold leading-[var(--line-height-heading)] text-foreground">
+                <div className="min-w-0 flex-1">
+                  <h3 className="text-base font-bold leading-tight text-foreground">
                     {event.title}
                   </h3>
-                  <p className="mt-2 flex items-center gap-2 text-sm text-primary">
-                    <Clock aria-hidden="true" className="shrink-0" size={16} />
-                    <span>{event.time}</span>
+                  <p className="mt-1 flex items-center gap-1.5 text-sm leading-tight text-primary">
+                    <Clock aria-hidden="true" className="shrink-0" size={15} />
+                    <span className="min-w-0">{event.time}</span>
                   </p>
-                  <p className="mt-1 flex items-center gap-2 text-sm text-primary">
-                    <MapPin aria-hidden="true" className="shrink-0" size={16} />
+                  <p className="mt-0.5 flex items-center gap-1.5 text-sm leading-tight text-primary">
+                    <MapPin aria-hidden="true" className="shrink-0" size={15} />
                     <span>{event.location}</span>
                   </p>
-                  <p className="mt-2 text-sm leading-[var(--line-height-body)] text-foreground/86">
+                  <p className="mt-1 text-sm leading-snug text-foreground/86">
                     {event.summary}
                   </p>
                 </div>
@@ -227,23 +206,11 @@ export default function EventsPage() {
             Past Events
           </h2>
           <div className="mt-1 h-1 w-16 bg-accent" aria-hidden="true" />
-          <div className="mt-3 flex items-stretch gap-3 overflow-x-auto pb-2">
-            <div className="flex h-24 w-60 shrink-0 items-center gap-4 rounded-[var(--radius-component)] bg-[var(--academy-deep-navy)] p-4 text-white">
-              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-sm border border-white/40 bg-white/8 text-white/80">
-                <ImageIcon aria-hidden="true" size={28} />
-              </span>
-              <div>
-                <h3 className="text-lg font-bold">Past Events</h3>
-                <p className="mt-1 text-sm leading-snug text-white/84">
-                  Explore highlights from our recent Academy experiences.
-                </p>
-              </div>
-            </div>
-
+          <div className="mt-2 grid gap-3 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-[repeat(5,minmax(0,1fr))_12rem]">
             {pastEventImages.map((image) => (
               <img
                 alt={image.alt}
-                className="h-24 w-44 shrink-0 rounded-[var(--radius-component)] object-cover"
+                className="h-[4.25rem] w-full rounded-[var(--radius-component)] object-cover"
                 key={image.src}
                 loading="lazy"
                 src={image.src}
@@ -251,10 +218,10 @@ export default function EventsPage() {
             ))}
 
             <Link
-              className="flex h-24 w-48 shrink-0 items-center justify-center gap-3 rounded-[var(--radius-component)] border border-border bg-card px-4 text-sm font-bold text-primary shadow-soft transition hover:border-primary hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+              className="flex h-[4.25rem] items-center justify-center gap-3 rounded-[var(--radius-component)] border border-border bg-card px-4 text-sm font-bold text-primary shadow-soft transition hover:border-primary hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
               to="/community/photos"
             >
-              View photo album
+              View Photo Album
               <ArrowRight aria-hidden="true" size={22} />
             </Link>
           </div>

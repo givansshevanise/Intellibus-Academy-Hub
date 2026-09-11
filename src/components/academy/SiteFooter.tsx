@@ -5,11 +5,11 @@ import { footerNavigation } from "../../app/navigation";
 export function SiteFooter() {
   return (
     <footer className="bg-[var(--academy-deep-navy)] text-white">
-      <div className="academy-container flex min-h-[var(--footer-height)] flex-col gap-5 py-6 md:flex-row md:items-center md:justify-between">
+      <div className="academy-container flex min-h-[var(--footer-height)] flex-col justify-center gap-3 py-3 md:flex-row md:items-center md:justify-between md:py-0">
         <p className="text-sm text-white/86">&copy; 2026 Intellibus</p>
         <nav
           aria-label="Footer navigation"
-          className="flex flex-wrap items-center gap-x-8 gap-y-3"
+          className="flex flex-wrap items-center gap-x-8 gap-y-2"
         >
           <span className="text-base font-bold">More Links</span>
           {footerNavigation.map((item) =>

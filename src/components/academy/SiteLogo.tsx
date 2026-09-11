@@ -15,7 +15,7 @@ export function SiteLogo({ label = "Intellibus" }: SiteLogoProps) {
     >
       <img
         alt={label}
-        className="h-12 w-40 object-cover object-center md:w-48"
+        className="h-12 w-48 object-cover object-center sm:w-56 md:w-64"
         src={intellibusLogo}
       />
     </Link>

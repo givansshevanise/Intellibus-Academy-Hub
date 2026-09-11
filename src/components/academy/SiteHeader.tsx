@@ -13,6 +13,12 @@ export function SiteHeader() {
         <SiteLogo />
         <DesktopNavigation items={primaryNavigation} />
         <div className="flex items-center gap-3">
+          <button
+            className="hidden min-h-10 items-center px-3 text-sm font-semibold text-foreground transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 lg:inline-flex"
+            type="button"
+          >
+            Search
+          </button>
           <Button asChild className="hidden sm:inline-flex" variant="primary">
             <Link to="/community/cohort">Cohort 2026</Link>
           </Button>
